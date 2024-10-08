@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>翻书</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        h1 {
+            position: absolute;
+            top: 20px;
+            left: 0;
+            width: 100%;
+            font-size: 36px;
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        article {
+            position: relative;
+            width: 300px;
+            height: 400px;
+            padding: 40px 80px 40px 380px;
+            margin: auto;
+            box-shadow: 2px 3px 5px 6px #3f1300;
+            background-image: url(https://cdn.pixabay.com/photo/2016/12/18/09/05/trees-1915245_1280.jpg);
+        }
+
+        .book {
+            background-color: cornflowerblue;
+            position: relative;
+        }
+
+        .rotateBox {
+            position: absolute;
+            z-index: 10;
+            width: 800px;
+            height: 800px;
+            bottom: -600px;
+            transform-origin: 0px 800px;
+            /* border: 4px dashed #b0b0b0; */
+            transform: rotate(-33.7deg);
+            transition: 1s;
+            overflow: hidden;
+        }
+
+        .pageItem {
+            position: absolute;
+            width: 300px;
+            height: 400px;
+            font-size: 32px;
+            text-align: center;
+            box-shadow: 0 0 11px rgba(0, 0, 0, .5);
+        }
+
+        .front {
+            bottom: 200px;
+            transform-origin: 0 600px;
+            transform: rotate(33.7deg);
+            transition: 1s;
+        }
+
+        .back {
+            left: -300px;
+            transform-origin: 300px 600px;
+            transform: rotate(146.3deg);
+            transition: 1s;
+            bottom: 200px;
+        }
+
+        figure img {
+            width: 100%;
+            height: 100%;
+            aspect-ratio: 3/4;
+            object-fit: cover;
+        }
+
+        figure figcaption {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-wrap: nowrap;
+            color: #fff;
+            background-color: rgba(255, 255, 255, .5);
+            padding: 1em;
+            border: 4px double #fff;
+        }
+
+        article:hover .rotateBox {
+            transform: rotate(-90deg);
+        }
+
+        article:hover .front {
+            transform: rotate(90deg);
+        }
+
+        article:hover .back {
+            transform: rotate(90deg);
+        }
+
+        .rotateBox {
+            transform: rotate(-33.7deg);
+            transform: rotate(-45deg);
+        }
+
+        .front {
+
+            transform: rotate(33.7deg);
+            transform: rotate(45deg);
+        }
+
+        .back {
+            transform: rotate(146.3deg);
+            transform: rotate(135deg);
+        }
+    </style>
+</head>
+
+<body>
+    <article>
+        <div class="book">
+            <div class="rotateBox">
+                <div class="pageItem front">
+                    <figure>
+                        <img src="./1.webp" alt="">
+                        <figcaption>Page 1</figcaption>
+                    </figure>
+                </div>
+                <div class="pageItem back">
+                    <figure>
+                        <img src="./2.webp" alt="">
+                        <figcaption>Page 2</figcaption>
+                    </figure>
+                </div>
+            </div>
+            <div class="pageItem">
+                <figure>
+                    <img src="https://cdn.pixabay.com/photo/2021/11/26/17/26/dubai-desert-safari-6826298_640.jpg"
+                        alt="">
+                    <figcaption>Page 3</figcaption>
+                </figure>
+            </div>
+        </div>
+    </article>
+</body>
+
+</html>
